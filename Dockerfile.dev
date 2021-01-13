@@ -1,0 +1,10 @@
+FROM golang:1.15.6
+
+WORKDIR /opt
+
+RUN curl \
+    -L https://github.com/uber/prototool/releases/download/v1.10.0/prototool-linux-x86_64 \
+    -o /usr/local/bin/prototool && \
+  chmod +x /usr/local/bin/prototool
+RUN go get google.golang.org/protobuf/cmd/protoc-gen-go
+RUN go get google.golang.org/grpc/cmd/protoc-gen-go-grpc
