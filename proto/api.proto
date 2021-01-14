@@ -4,7 +4,26 @@ package sample.v1;
 
 option go_package = "go/samplev1";
 
+import "google/protobuf/descriptor.proto";
+
+// SampleAPI ...
+service SampleAPI {
+  // GetFoo ...
+  rpc GetFoo(Foo) returns (Foo) {
+    option (sample.v1.authentication).required = true;
+  }
+}
+
 // Foo ...
 message Foo {
   string hoge = 1;
+}
+
+// Authentication ...
+message Authentication {
+  bool required = 1;
+}
+
+extend google.protobuf.MethodOptions {
+  Authentication authentication = 50000;
 }

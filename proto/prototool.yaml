@@ -1,3 +1,7 @@
+# protoc:
+#   includes:
+#     - third_party/googleapis
+
 # See https://github.com/uber/prototool/blob/dev/docs/lint.md
 lint:
   group: uber2
@@ -17,3 +21,6 @@ generate:
       output: ..
     - name: go-grpc
       output: ..
+    - name: sample
+      # flags: plugins=grpc,foo=bar
+      output: .
