@@ -21,54 +21,6 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// Foo ...
-type Foo struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Hoge string `protobuf:"bytes,1,opt,name=hoge,proto3" json:"hoge,omitempty"`
-}
-
-func (x *Foo) Reset() {
-	*x = Foo{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_api_proto_msgTypes[0]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *Foo) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*Foo) ProtoMessage() {}
-
-func (x *Foo) ProtoReflect() protoreflect.Message {
-	mi := &file_api_proto_msgTypes[0]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use Foo.ProtoReflect.Descriptor instead.
-func (*Foo) Descriptor() ([]byte, []int) {
-	return file_api_proto_rawDescGZIP(), []int{0}
-}
-
-func (x *Foo) GetHoge() string {
-	if x != nil {
-		return x.Hoge
-	}
-	return ""
-}
-
 // Authentication ...
 type Authentication struct {
 	state         protoimpl.MessageState
@@ -81,7 +33,7 @@ type Authentication struct {
 func (x *Authentication) Reset() {
 	*x = Authentication{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_api_proto_msgTypes[1]
+		mi := &file_api_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -94,7 +46,7 @@ func (x *Authentication) String() string {
 func (*Authentication) ProtoMessage() {}
 
 func (x *Authentication) ProtoReflect() protoreflect.Message {
-	mi := &file_api_proto_msgTypes[1]
+	mi := &file_api_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -107,7 +59,7 @@ func (x *Authentication) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Authentication.ProtoReflect.Descriptor instead.
 func (*Authentication) Descriptor() ([]byte, []int) {
-	return file_api_proto_rawDescGZIP(), []int{1}
+	return file_api_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *Authentication) GetRequired() bool {
@@ -115,6 +67,150 @@ func (x *Authentication) GetRequired() bool {
 		return x.Required
 	}
 	return false
+}
+
+// FooRequest ...
+type FooRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Foo string `protobuf:"bytes,1,opt,name=foo,proto3" json:"foo,omitempty"`
+}
+
+func (x *FooRequest) Reset() {
+	*x = FooRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_api_proto_msgTypes[1]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *FooRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FooRequest) ProtoMessage() {}
+
+func (x *FooRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_api_proto_msgTypes[1]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FooRequest.ProtoReflect.Descriptor instead.
+func (*FooRequest) Descriptor() ([]byte, []int) {
+	return file_api_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *FooRequest) GetFoo() string {
+	if x != nil {
+		return x.Foo
+	}
+	return ""
+}
+
+// FooResponse ...
+type FooResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Bar string `protobuf:"bytes,1,opt,name=bar,proto3" json:"bar,omitempty"`
+}
+
+func (x *FooResponse) Reset() {
+	*x = FooResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_api_proto_msgTypes[2]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *FooResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*FooResponse) ProtoMessage() {}
+
+func (x *FooResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_api_proto_msgTypes[2]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use FooResponse.ProtoReflect.Descriptor instead.
+func (*FooResponse) Descriptor() ([]byte, []int) {
+	return file_api_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *FooResponse) GetBar() string {
+	if x != nil {
+		return x.Bar
+	}
+	return ""
+}
+
+// Foo ...
+type Foo struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Hoge string `protobuf:"bytes,1,opt,name=hoge,proto3" json:"hoge,omitempty"`
+}
+
+func (x *Foo) Reset() {
+	*x = Foo{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_api_proto_msgTypes[3]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Foo) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Foo) ProtoMessage() {}
+
+func (x *Foo) ProtoReflect() protoreflect.Message {
+	mi := &file_api_proto_msgTypes[3]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Foo.ProtoReflect.Descriptor instead.
+func (*Foo) Descriptor() ([]byte, []int) {
+	return file_api_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *Foo) GetHoge() string {
+	if x != nil {
+		return x.Hoge
+	}
+	return ""
 }
 
 var file_api_proto_extTypes = []protoimpl.ExtensionInfo{
@@ -140,15 +236,20 @@ var file_api_proto_rawDesc = []byte{
 	0x0a, 0x09, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x09, 0x73, 0x61, 0x6d,
 	0x70, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x1a, 0x20, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2f, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74,
-	0x6f, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x19, 0x0a, 0x03, 0x46, 0x6f, 0x6f, 0x12,
-	0x12, 0x0a, 0x04, 0x68, 0x6f, 0x67, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x68,
-	0x6f, 0x67, 0x65, 0x22, 0x2c, 0x0a, 0x0e, 0x41, 0x75, 0x74, 0x68, 0x65, 0x6e, 0x74, 0x69, 0x63,
-	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x1a, 0x0a, 0x08, 0x72, 0x65, 0x71, 0x75, 0x69, 0x72, 0x65,
-	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x08, 0x52, 0x08, 0x72, 0x65, 0x71, 0x75, 0x69, 0x72, 0x65,
-	0x64, 0x32, 0x3d, 0x0a, 0x09, 0x53, 0x61, 0x6d, 0x70, 0x6c, 0x65, 0x41, 0x50, 0x49, 0x12, 0x30,
-	0x0a, 0x06, 0x47, 0x65, 0x74, 0x46, 0x6f, 0x6f, 0x12, 0x0e, 0x2e, 0x73, 0x61, 0x6d, 0x70, 0x6c,
-	0x65, 0x2e, 0x76, 0x31, 0x2e, 0x46, 0x6f, 0x6f, 0x1a, 0x0e, 0x2e, 0x73, 0x61, 0x6d, 0x70, 0x6c,
-	0x65, 0x2e, 0x76, 0x31, 0x2e, 0x46, 0x6f, 0x6f, 0x22, 0x06, 0x82, 0xb5, 0x18, 0x02, 0x08, 0x01,
+	0x6f, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x2c, 0x0a, 0x0e, 0x41, 0x75, 0x74, 0x68,
+	0x65, 0x6e, 0x74, 0x69, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x1a, 0x0a, 0x08, 0x72, 0x65,
+	0x71, 0x75, 0x69, 0x72, 0x65, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x08, 0x52, 0x08, 0x72, 0x65,
+	0x71, 0x75, 0x69, 0x72, 0x65, 0x64, 0x22, 0x1e, 0x0a, 0x0a, 0x46, 0x6f, 0x6f, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x12, 0x10, 0x0a, 0x03, 0x66, 0x6f, 0x6f, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x03, 0x66, 0x6f, 0x6f, 0x22, 0x1f, 0x0a, 0x0b, 0x46, 0x6f, 0x6f, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x10, 0x0a, 0x03, 0x62, 0x61, 0x72, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x03, 0x62, 0x61, 0x72, 0x22, 0x19, 0x0a, 0x03, 0x46, 0x6f, 0x6f, 0x12, 0x12,
+	0x0a, 0x04, 0x68, 0x6f, 0x67, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x68, 0x6f,
+	0x67, 0x65, 0x32, 0x4c, 0x0a, 0x09, 0x53, 0x61, 0x6d, 0x70, 0x6c, 0x65, 0x41, 0x50, 0x49, 0x12,
+	0x3f, 0x0a, 0x06, 0x47, 0x65, 0x74, 0x46, 0x6f, 0x6f, 0x12, 0x15, 0x2e, 0x73, 0x61, 0x6d, 0x70,
+	0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x46, 0x6f, 0x6f, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x16, 0x2e, 0x73, 0x61, 0x6d, 0x70, 0x6c, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x46, 0x6f, 0x6f,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x06, 0x82, 0xb5, 0x18, 0x02, 0x08, 0x01,
 	0x3a, 0x63, 0x0a, 0x0e, 0x61, 0x75, 0x74, 0x68, 0x65, 0x6e, 0x74, 0x69, 0x63, 0x61, 0x74, 0x69,
 	0x6f, 0x6e, 0x12, 0x1e, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x62, 0x75, 0x66, 0x2e, 0x4d, 0x65, 0x74, 0x68, 0x6f, 0x64, 0x4f, 0x70, 0x74, 0x69, 0x6f,
@@ -171,17 +272,19 @@ func file_api_proto_rawDescGZIP() []byte {
 	return file_api_proto_rawDescData
 }
 
-var file_api_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_api_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_api_proto_goTypes = []interface{}{
-	(*Foo)(nil),                      // 0: sample.v1.Foo
-	(*Authentication)(nil),           // 1: sample.v1.Authentication
-	(*descriptor.MethodOptions)(nil), // 2: google.protobuf.MethodOptions
+	(*Authentication)(nil),           // 0: sample.v1.Authentication
+	(*FooRequest)(nil),               // 1: sample.v1.FooRequest
+	(*FooResponse)(nil),              // 2: sample.v1.FooResponse
+	(*Foo)(nil),                      // 3: sample.v1.Foo
+	(*descriptor.MethodOptions)(nil), // 4: google.protobuf.MethodOptions
 }
 var file_api_proto_depIdxs = []int32{
-	2, // 0: sample.v1.authentication:extendee -> google.protobuf.MethodOptions
-	1, // 1: sample.v1.authentication:type_name -> sample.v1.Authentication
-	0, // 2: sample.v1.SampleAPI.GetFoo:input_type -> sample.v1.Foo
-	0, // 3: sample.v1.SampleAPI.GetFoo:output_type -> sample.v1.Foo
+	4, // 0: sample.v1.authentication:extendee -> google.protobuf.MethodOptions
+	0, // 1: sample.v1.authentication:type_name -> sample.v1.Authentication
+	1, // 2: sample.v1.SampleAPI.GetFoo:input_type -> sample.v1.FooRequest
+	2, // 3: sample.v1.SampleAPI.GetFoo:output_type -> sample.v1.FooResponse
 	3, // [3:4] is the sub-list for method output_type
 	2, // [2:3] is the sub-list for method input_type
 	1, // [1:2] is the sub-list for extension type_name
@@ -196,7 +299,7 @@ func file_api_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_api_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Foo); i {
+			switch v := v.(*Authentication); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -208,7 +311,31 @@ func file_api_proto_init() {
 			}
 		}
 		file_api_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*Authentication); i {
+			switch v := v.(*FooRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_api_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*FooResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_api_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Foo); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -226,7 +353,7 @@ func file_api_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_api_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   4,
 			NumExtensions: 1,
 			NumServices:   1,
 		},

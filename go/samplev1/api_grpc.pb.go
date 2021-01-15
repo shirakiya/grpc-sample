@@ -18,7 +18,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type SampleAPIClient interface {
 	// GetFoo ...
-	GetFoo(ctx context.Context, in *Foo, opts ...grpc.CallOption) (*Foo, error)
+	GetFoo(ctx context.Context, in *FooRequest, opts ...grpc.CallOption) (*FooResponse, error)
 }
 
 type sampleAPIClient struct {
@@ -29,8 +29,8 @@ func NewSampleAPIClient(cc grpc.ClientConnInterface) SampleAPIClient {
 	return &sampleAPIClient{cc}
 }
 
-func (c *sampleAPIClient) GetFoo(ctx context.Context, in *Foo, opts ...grpc.CallOption) (*Foo, error) {
-	out := new(Foo)
+func (c *sampleAPIClient) GetFoo(ctx context.Context, in *FooRequest, opts ...grpc.CallOption) (*FooResponse, error) {
+	out := new(FooResponse)
 	err := c.cc.Invoke(ctx, "/sample.v1.SampleAPI/GetFoo", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -43,7 +43,7 @@ func (c *sampleAPIClient) GetFoo(ctx context.Context, in *Foo, opts ...grpc.Call
 // for forward compatibility
 type SampleAPIServer interface {
 	// GetFoo ...
-	GetFoo(context.Context, *Foo) (*Foo, error)
+	GetFoo(context.Context, *FooRequest) (*FooResponse, error)
 	mustEmbedUnimplementedSampleAPIServer()
 }
 
@@ -51,7 +51,7 @@ type SampleAPIServer interface {
 type UnimplementedSampleAPIServer struct {
 }
 
-func (UnimplementedSampleAPIServer) GetFoo(context.Context, *Foo) (*Foo, error) {
+func (UnimplementedSampleAPIServer) GetFoo(context.Context, *FooRequest) (*FooResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetFoo not implemented")
 }
 func (UnimplementedSampleAPIServer) mustEmbedUnimplementedSampleAPIServer() {}
@@ -68,7 +68,7 @@ func RegisterSampleAPIServer(s grpc.ServiceRegistrar, srv SampleAPIServer) {
 }
 
 func _SampleAPI_GetFoo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Foo)
+	in := new(FooRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -80,7 +80,7 @@ func _SampleAPI_GetFoo_Handler(srv interface{}, ctx context.Context, dec func(in
 		FullMethod: "/sample.v1.SampleAPI/GetFoo",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SampleAPIServer).GetFoo(ctx, req.(*Foo))
+		return srv.(SampleAPIServer).GetFoo(ctx, req.(*FooRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }

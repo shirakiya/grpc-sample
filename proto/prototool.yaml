@@ -1,6 +1,5 @@
-# protoc:
-#   includes:
-#     - third_party/googleapis
+protoc:
+  includes:
 
 # See https://github.com/uber/prototool/blob/dev/docs/lint.md
 lint:
@@ -21,6 +20,6 @@ generate:
       output: ..
     - name: go-grpc
       output: ..
-    - name: sample
-      # flags: plugins=grpc,foo=bar
-      output: .
+    # - name: sample
+    #   # flags: plugins=grpc,foo=bar
+    #   output: .
