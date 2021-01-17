@@ -1,7 +1,7 @@
 bash:
 	docker-compose run --rm go /bin/bash
 
-run:
+run: proto/gen
 	go run cmd/grpc_sample_main/main.go
 
 install:
