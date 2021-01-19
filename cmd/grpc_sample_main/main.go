@@ -21,15 +21,15 @@ type sampleServer struct {
 
 func (s *sampleServer) GetFoo(
 	ctx context.Context,
-	req *samplev1.FooRequest,
-) (*samplev1.FooResponse, error) {
+	req *samplev1.GetFooRequest,
+) (*samplev1.GetFooResponse, error) {
 	log.Println("Requested GetFoo")
 
 	if req.Foo == "" {
 		return nil, status.Error(codes.InvalidArgument, "Foo must be set")
 	}
 
-	return &samplev1.FooResponse{
+	return &samplev1.GetFooResponse{
 		Bar: "success!",
 	}, nil
 }

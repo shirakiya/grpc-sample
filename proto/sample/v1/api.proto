@@ -18,18 +18,18 @@ extend google.protobuf.MethodOptions {
 // SampleAPI ...
 service SampleAPI {
   // GetFoo ...
-  rpc GetFoo(FooRequest) returns (FooResponse) {
+  rpc GetFoo(GetFooRequest) returns (GetFooResponse) {
     option (sample.v1.authentication).required = true;
   }
 }
 
-// FooRequest ...
-message FooRequest {
+// GetFooRequest ...
+message GetFooRequest {
   string foo = 1;
 }
 
-// FooResponse ...
-message FooResponse {
+// GetFooResponse ...
+message GetFooResponse {
   string bar = 1;
 }
 
